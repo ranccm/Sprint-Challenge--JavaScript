@@ -171,7 +171,11 @@ Using filter, create a new array of objects called lowPopulationAnimals
 
 */
 
-const lowPopulationAnimals = zooAnimals.filter();
+const lowPopulationAnimals = zooAnimals.filter(function(zooAnimals){
+  if(zooAnimals.population < 5){
+    return true
+  };
+});
 
 console.log(lowPopulationAnimals);
 
@@ -181,6 +185,9 @@ The zoos need to know their total animal population across the United States. Fi
 
 */
 const populationTotal = 0;
+const populationTotal = zooAnimals.reduce((total, population)=> {
+  return total += population.population}, 0);
+
 console.log(populationTotal);
 
 
